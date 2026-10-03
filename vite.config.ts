@@ -6,7 +6,9 @@ import {defineConfig} from 'vite';
 export default defineConfig(() => {
   return {
     base: '/one-connect/',
+    
     plugins: [react(), tailwindcss()],
+    
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
