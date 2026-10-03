@@ -20,6 +20,10 @@ import {
   MessageSquare,
 } from 'lucide-react';
 import { SERVICES_LIST, CATEGORIES, ServiceItem } from '../data/servicesData';
+import fabricationImage from '../assets/images/hero_architectural_site_1791029885839.jpg';
+import officeImage from '../assets/images/commercial_office_fitout_1791029899454.jpg';
+import retailImage from '../assets/images/retail_shop_renovation_1791029911701.jpg';
+import epoxyImage from '../assets/images/epoxy_flooring_industrial_1791029923384.jpg';
 import { getWhatsAppLink } from '../config';
 
 const ICON_MAP: Record<string, React.ElementType> = {
@@ -43,24 +47,23 @@ const ICON_MAP: Record<string, React.ElementType> = {
 
 // Map each service to an architectural graphic theme or photo representation
 const SERVICE_IMAGES: Record<string, string> = {
-  'fabrication-welding': '/src/assets/images/hero_architectural_site_1791029885839.jpg',
-  'drywall-partition': '/src/assets/images/commercial_office_fitout_1791029899454.jpg',
-  'wall-panels': '/src/assets/images/retail_shop_renovation_1791029911701.jpg',
-  'false-ceiling': '/src/assets/images/commercial_office_fitout_1791029899454.jpg',
-  'pop-work': '/src/assets/images/hero_architectural_site_1791029885839.jpg',
-  'carpentry': '/src/assets/images/commercial_office_fitout_1791029899454.jpg',
-  'acp-cladding': '/src/assets/images/retail_shop_renovation_1791029911701.jpg',
-  'waterproofing': '/src/assets/images/hero_architectural_site_1791029885839.jpg',
-  'epoxy-flooring': '/src/assets/images/epoxy_flooring_industrial_1791029923384.jpg',
-  'windows-glass': '/src/assets/images/retail_shop_renovation_1791029911701.jpg',
-  'electrical-wiring': '/src/assets/images/commercial_office_fitout_1791029899454.jpg',
-  'board-sheet-work': '/src/assets/images/hero_architectural_site_1791029885839.jpg',
-  'painting-finishing': '/src/assets/images/retail_shop_renovation_1791029911701.jpg',
-  'renovation': '/src/assets/images/retail_shop_renovation_1791029911701.jpg',
-  'civil-finishing': '/src/assets/images/hero_architectural_site_1791029885839.jpg',
-  'complete-project-execution': '/src/assets/images/commercial_office_fitout_1791029899454.jpg',
+  'fabrication-welding': fabricationImage,
+  'drywall-partition': officeImage,
+  'wall-panels': retailImage,
+  'false-ceiling': officeImage,
+  'pop-work': fabricationImage,
+  'carpentry': officeImage,
+  'acp-cladding': retailImage,
+  'waterproofing': fabricationImage,
+  'epoxy-flooring': epoxyImage,
+  'windows-glass': retailImage,
+  'electrical-wiring': officeImage,
+  'board-sheet-work': fabricationImage,
+  'painting-finishing': retailImage,
+  'renovation': retailImage,
+  'civil-finishing': fabricationImage,
+  'complete-project-execution': officeImage,
 };
-
 interface ServicesSectionProps {
   onSelectService: (service: ServiceItem) => void;
   onOpenQuoteWithService: (serviceName: string) => void;
@@ -115,7 +118,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredServices.map((service, index) => {
             const Icon = ICON_MAP[service.iconName] || Wrench;
-            const imgSrc = SERVICE_IMAGES[service.id] || '/src/assets/images/hero_architectural_site_1791029885839.jpg';
+            const imgSrc = SERVICE_IMAGES[service.id] || fabricationImage;
 
             return (
               <div
