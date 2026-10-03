@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/one-connect/',
+    base: '/One-Connect/',
     
     plugins: [react(), tailwindcss()],
     
